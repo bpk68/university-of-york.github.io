@@ -7,8 +7,8 @@ permalink:           pretty
 title:               University of York Development Docs
 tagline:             'University of York Development Docs'
 description:         'Detailed documentation on our website development habits. From front-end development techniques, Git handling, processes, practices, code reviews, style guides and more, you will find it here'
-url:                 https://university-of-york.github.io/lanyon/
-baseurl:             'https://university-of-york.github.io/lanyon/'
+url:                 https://www.york.ac.uk
+baseurl:             'https://university-of-york.github.io/'
 paginate:            5
 
 # About/contact
