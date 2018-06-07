@@ -37,7 +37,7 @@
 
 
 @font-face {
-    font-family: 'museo_sans500';
+    font-family: 'museo-sans';
     src: url('https://university-of-york.github.io/public/fonts/museosans_500-webfont.woff2') format('woff2'),
          url('https://university-of-york.github.io/public/fonts/museosans_500-webfont.woff') format('woff');
     font-weight: normal;
@@ -45,7 +45,7 @@
 
 }
 @font-face {
-  font-family: 'ChaparralPro-Regular';
+  font-family: 'chaparral-pro';
   src: url('https://university-of-york.github.io/public/fonts/ChaparralPro-Regular.eot?#iefix') format('embedded-opentype'),  				
     	url('https://university-of-york.github.io/public/fonts/ChaparralPro-Regular.otf')  format('opentype'),
 	    url('https://university-of-york.github.io/public/fonts/ChaparralPro-Regular.woff') format('woff'), 
