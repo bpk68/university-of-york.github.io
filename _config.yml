@@ -4,8 +4,8 @@
 permalink:           pretty
 
 # Setup
-title:               University of York Development Docs
-tagline:             'University of York Development Docs'
+title:               Digital Team
+tagline:             'Development docs, habits & practices'
 description:         'Detailed documentation on our website development habits. From front-end development techniques, Git handling, processes, practices, code reviews, style guides and more, you will find it here'
 url:                 https://www.york.ac.uk
 baseurl:             'https://university-of-york.github.io/'
