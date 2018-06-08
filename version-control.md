@@ -1,3 +1,9 @@
+---
+layout: page
+title: Version Control
+published: true
+---
+
 This page outlines our current versioning control methods and conventions. It's important that we agree as a team on how we approach and use these conventions and most importantly, improve them as we go. 
 
 By using the agreed branching and versioning habits below, we will create a clearer picture of our development progress, release versions and code history. We will also make the release process and branch merging simpler.
