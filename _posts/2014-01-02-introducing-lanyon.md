@@ -8,7 +8,7 @@ Welcome to the University of York Digital Team's website development docs. A lot
 
 We already have a large component library called our [Pattern Library](https://www.york.ac.uk/pattern-library/index.html) that we share via the public website and on GitHub ([Pattern Library on GitHub](https://github.com/university-of-york/design-patterns)).
 
-This website is hosted by [GitHub](https://github.com/) and uses a customised fork of the [Lanyon project](https://github.com/poole/lanyon) by the talended Matt
+This website is hosted by [GitHub](https://github.com/) and uses a customised fork of the [Lanyon project](https://github.com/poole/lanyon) by the talended [Mark Otto](https://github.com/mdo).
 
 ## What are the development docs?
 
