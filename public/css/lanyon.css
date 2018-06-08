@@ -112,6 +112,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   color: #c0c0c0;
   letter-spacing: 0;
+  display: block;
 }
 
 @media (max-width: 48em) {
@@ -124,8 +125,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .masthead .logo {
-  display: inline-block;
   width: 200px;
+  display: inline-block;
+  border-radius: 0;
+  float: left;
+  margin-right: 20px;
 }
 
 
