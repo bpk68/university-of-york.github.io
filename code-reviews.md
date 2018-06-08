@@ -17,7 +17,7 @@ That said, code reviews shouldn't have to be a chore or a thing that's put off o
 
 Broadly speaking it's a simple process that goes like this:
 
-1. Once a particular branch is ready to be merged back into the main body of code (usually the Development branch) the author should initiate a pull request through GitHub. The pull request should note any relevant information that reviewers need to know about the work and include the right people to review the task (e.g. senior team members, collaborators, etc.)
+1. Once a particular branch is ready to be merged back into the main body of code (usually the Development branch) the author should initiate a [pull request through GitHub](https://github.com/features/code-review/). The pull request should note any relevant information that reviewers need to know about the work and include the right people to review the task (e.g. senior team members, collaborators, etc.)
 2. The code will be reviewed and commented on as appropriate.
 3. There may be an element of automation (see below) applied to the code to enforce particular style guides or highlight errors
 4. Once the code has been reviewed and accepted, it will be merged back into the appropriate branch (again, usually the Development branch).
