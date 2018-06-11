@@ -51,6 +51,8 @@ For example, this is roughly how we split our Pattern Library styles
 |-- ...
 ```
 
+Where possible, try to keep style files as small and modular as needed to aid with maintenance 
+
 ### Table of contents
 
 A good table of contents will explain how styles pin together and what each does, how it relates to another. Although it requires some commitment from the team to maintain and keep up to date, it's worth it.
@@ -634,49 +636,90 @@ h1 {
 }
 ```
 
-### Number Labelling
-
-### Component-extension Pointers
-
-### Section Comment
-
-
 ### Naming Conventions
+
+We always want to ensure that all of our classes and settings are meaningfully named and adhering to our set conventions and to not worry about the length of our class names as gzip will compress well written code incredibly well.
+
+Starting right at the top, we use
+
+-lowercase;
+-BEM-like naming for most classes;
+-hyphen-delimited for everything else;
+-namespaces for almost everything.
+
+We don't want (i.e. **DO NOT DO**)
+
+-CamelCase;
+-underscores (with the exception of being used in BEM Element selectors or very rare hacks in the nameing section below);
+-id's, never.
+
 
 #### BEM-like Naming
 
-#### Hyphen-delimited
+We approach most of our UI building using the [BEM methodology](http://getbem.com/naming/) approach to naming and breaking up our UI components.
 
-#### Namespace
+BEM, meaning Block, Element, Modifier, is a front-end methodology coined by developers working at Yandex. Whilst BEM is a complete methodology, here we are only concerned with its naming convention. You can read more about [BEM](http://getbem.com/naming/) on the Yandex documentation site.
 
-#### What We Namespace
+BEM splits components’ classes into three groups:
 
-#### The Namespaces
+-Block: The sole root of the component.
+-Element: A component part of the Block.
+-Modifier: A variant or extension of the Block.
 
-##### JS Hooks
+As a quick, non-complete example:
 
-##### State Hooks
+```css
+.car {}
+.car__engine {}
+.car--started {}
+```
 
-##### Server-side Hooks
+Elements are delimited with two (2) underscores (__ ) and Modifiers are delimited by two (2) hyphens (--).
 
-##### QA Hooks
+Here we can see that .car {} is the Block; it is the sole root of a discrete entity. .car__engine {} is an Element; it is a smaller part of the .car {} Block. Finally, .car--started {} is a Modifier; it is a specific variant of the .car {} Block.
 
-##### Tracking Hooks
+One of the distinguishing aspects of BEM naming and structuring is the flat specificity structure the files create. Whilst Elements are related to Blocks and Blocks can be modified using Modifiers, the naming conventions are structured to avoid nesting, thus reducing specificty problems.
 
-#### Settings
+We use nesting within our Sass files for clarity and to highlight Elements' relationships within their Blocks, but note the use of the '&' parent selector to output a flat CSS structure.
 
-##### Global Settings
+**Good example**
 
-##### Local Settings
+```sass
+.listing-item {
 
-####Sizes And Sides
+	// state modifiers first
+	&:hover {
+
+	}
 
 
+	// Element(s), begin with a '__' double underscore and the '&' selector
+	// outputs '.listing-item__title {}'
+	&__title {
+
+	}
+
+	&__description {
+
+	}
 
 
+	// Modifier(s)
+	&--highlighted {
 
+	}
+}
+```
 
-### BEM conventions
+A few DOs and DON'Ts
+
+-DO look for patterns in design to reuse elsewhere
+-DO look through the documentation
+-DON'T use IDs in your CSS
+-DON'T change the Object types (namespaced o-)
+-DON'T use inline styles
+
+### BEM conventions continued
 
 From the [BEM](http://getbem.com/) website:
 
@@ -722,3 +765,119 @@ we would implement a modular `Figure` component in a `_figure.scss` file as foll
 Notice how we make heavy use of the '&' parent selector symbol to avoid lots of duplication in our writing.
 
 You can read more about our modularised code base on our [Pattern Library](https://www.york.ac.uk/pattern-library/css-components/figures.html) website.
+
+
+#### Hyphen-delimited
+
+We use hyphen-delimited naming for just about everything:
+
+-Settings/variables (`$my-long-variable`)
+-Mixins (`my-mixin-name`)
+-Functions (`a-function-name`)
+-Animation names (`hover-transition`)
+-Filenames (`_some-sass-file.scss`)
+-State hooks (`.is-hidden`)
+-JS hooks (`js-button-click`)
+
+Whilst brevity is favoured, don't shy away from using a longer name if it is more descriptive, but remember to use hyphenated naming. For example, `.short` is concise but not very descriptive, whereas `.short-intro-text` is preferred. 
+
+#### Namespace
+
+Namespaces are a useful way to separate out CSS in to different types. In a large-scale website, it can be hard to know what CSS it's possible to mess with, and what knock-on effects it might have. Namespaces give us that information.
+
+The namespaces we have are:
+
+##### Objects o-
+
+Be careful modifying these: objects can be used in many different contexts in the site, so changing the CSS may change more than your local context. Examples are: the media object, the grid layout
+
+##### Components c-
+
+The bread and butter of our CSS. Most parts of the site are components. A component should be able to live in any context and not change, so updating the CSS for a component should bear in mind that capability. Examples: buttons, icons, pagination.
+
+##### Utilities u-
+
+Utility classes usually have a single piece of functionality. Therefore they shouldn't be altered or amended.
+
+##### Themes t-
+
+This signifies that the styles are to be applied on a themed page. Theme pages might be signifying a different page colour, or a different layout. Theme styles should be cosmetic changes, not structural. Examples: 404 page, dark UI, departmental colours.
+
+##### Scopes s-
+
+Scopes are the only time that you will see HTML elements being directly styled in our CSS. It is for areas of the site where the content is user-managed (such as a rich text area) and will not have classes attached. They should give default styling for generic user input. Examples: CMS rich text editors.
+
+##### States is- and has-
+
+Movable styles that can be applied either when the page is loaded or by JS when the state changes. It shows a temporary, optional or short-lived style. Examples: `.is-open`, `.is-active`.
+
+##### Hacks _
+
+An underscore at the start of a class name shows that we're only putting this class here as a hack, it should be used sparingly, and never extended.
+
+##### Javascript js-
+
+We separate classes used for Javascript hooks from CSS classes. This means they are not bound together. Examples: .c-tabs also has a `.js-tabs` class to allow JS to apply tab behaviour.
+
+#### Settings
+
+##### Global Settings & variables
+
+Global settings and variables - these are defined in the global settings/variables partial (`_variables.scss`) - are namespaced with `g-` ("g" stands for "global") then followed by the name of the group they are a part of as the first word then after that any sub-groups.
+
+**Good example**
+
+```css
+$g-color-state-error: #dc322f;
+
+$g-color-state-success: #859900;
+
+$g-color-state-warning: #b58900;
+
+$g-color-state-information: #268bd2;
+```
+
+##### Local Settings
+
+Local settings and variables — e.g. those defined in partials outside of the global settings partial (`_settings.scss`) — should start with their relevant namespace, followed by the name of what it belongs too, for example, a component, a helper, etc., followed by what the setting is targeting. The main goal is to make the settings as readable as possible.
+
+/**
+ * Settings.
+ */
+
+// Colours
+$c-drop-down-menu-background-color: $g-color-white;
+
+$c-drop-down-menu-outline-color: rgba($g-color-black, 0.19);
+
+$c-drop-down-menu-link-color: $g-color-grey-rolling-stone;
+
+// Widths and heights
+$c-drop-down-menu-width: 194px;
+
+$c-drop-down-menu-width-narrow: 170px;
+
+$c-drop-down-menu-arrow-width: 13;
+
+$c-drop-down-menu-arrow-height: 7;
+
+// Padding
+$c-drop-down-menu-padding: 7;
+
+$c-drop-down-menu-link-padding-sides: 15px;
+
+$c-drop-down-menu-link-padding-ends: 8px;
+
+#### Sizes And Sides
+
+Sizing classes are partially used when it comes to media queries and the grid, but it's in development at the moment and this section needs defining and updating.
+
+### Tooling
+
+The tooling section needs to be definied and updated.
+
+Automated tools, such as linting make it easier to apply our guidelines and to prevent lost time picking apart nonconforming code in code reviews.
+
+#### Linting
+
+Out linting methods and configuration needs to be defined and updated here.
