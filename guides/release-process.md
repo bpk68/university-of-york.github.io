@@ -46,9 +46,9 @@ For example, if the due release is a minor release, then the branch you create w
 
 Be sure to update the versioning information in the appropriate file(s). This might include:
 
-	-Readme.md files
-	-Package.json or Webpack files
-	-Other configuration files
+- Readme.md files
+- Package.json or Webpack files
+- Other configuration files
 
 This may change over time as our integration with more automated review and deployment systems grows.
 
