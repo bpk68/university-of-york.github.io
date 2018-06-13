@@ -6,11 +6,11 @@ published: true
 
 At some point, development work pauses and shifts towards releasing the latest, stable bundle of code for a particular project. This is our release process and consists of a number of steps to ensure that:
 
--All current, active development work is bundled into a single release branch
--The release branch is tested, is error-free and conforms to our [style guides](https://university-of-york.github.io/style-guide/)
--The release code is successfully deployed
--Versions are updated
--Trunks (i.e. Master and Development branches) are merged into and updated
+- All current, active development work is bundled into a single release branch
+- The release branch is tested, is error-free and conforms to our [style guides](https://university-of-york.github.io/style-guide/)
+- The release code is successfully deployed
+- Versions are updated
+- Trunks (i.e. Master and Development branches) are merged into and updated
 
 
 ## The release process
@@ -75,8 +75,8 @@ Once the release has been successful, it's time to carry out a couple of additio
 
 The Release branch contains the latest, most up-to-date version of the code base at this point in time. In order to keep the code versioning history accurate as well as sharing the latest code with the ongoing development efforts, the Release branch should be merged back into the following two branches: 
 
--**The Master branch** - this allows the current version number that was released to act as a marker on the code base timeline.
--**The Development branch** - this allows the development code base to receive the most up to date, stable, released code 
+- **The Master branch** - this allows the current version number that was released to act as a marker on the code base timeline.
+- **The Development branch** - this allows the development code base to receive the most up to date, stable, released code 
 
 #### 2 - Delete the Release branch
 

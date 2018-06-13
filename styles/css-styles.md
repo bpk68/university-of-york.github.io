@@ -125,15 +125,15 @@ Here is how our rulesets should look:
 
 Our chosen format for how CSS rulesets should be written
 
--each selector on its own new line;
--a space before the opening brace ({);
--the opening brace ({) on the same line as the last selector;
--a space after the colon (:);
--each declaration on its own new line;
--each declaration indented by four (4) spaces;
--a trailing semi-colon (;) at the end of all declarations;
--the closing brace (}) on its own new line;
--long, comma-separated property values—such as collections of gradients or shadows—arranged across multiple new lines, making sure all values are indented at the same level as the first;
+- each selector on its own new line;
+- a space before the opening brace ({);
+- the opening brace ({) on the same line as the last selector;
+- a space after the colon (:);
+- each declaration on its own new line;
+- each declaration indented by four (4) spaces;
+- a trailing semi-colon (;) at the end of all declarations;
+- the closing brace (}) on its own new line;
+- long, comma-separated property values—such as collections of gradients or shadows—arranged across multiple new lines, making sure all values are indented at the same level as the first;
 
 **Good example**
 
@@ -153,20 +153,20 @@ Our chosen format for how CSS rulesets should be written
 
 Adding to the above, we also want to pay attention to
 
--use lowercase and preferably the shorthand version for all hexadecimal units although if you wish to use the longhand version then this is fine;
--use shorthands for properties and property values where it makes sense; where it doesn't make sense is using a shorthand property that makes you declare zero-values, here it is better to be explicit even if it means more lines of CSS;
--use single quotes for strings, values, etc; The exception to this is for `url()` values;
--wrap attribute selector values in double quotes;
--include a space after each comma in comma-separated values;
--parentheses should not be padded with spaces;
--when a decimal mark is needed always include the zero;
--use double colons (`::`) for pseudo elements;
--use relative units as much as possible (we have Sass mixins to help with this!) - pretty much everything is rem based and outside of font sizing ems may be used for spacing within a component for scaling based on font size, but this should be checked to see what the current approach is as we want consistency with this;
--use the px unit for fixed-sized things, (although this is rare nowadays as we're building responsive layouts) and for the following CSS properties:
---border-radius
---border
---box-shadow
---text-shadow
+- use lowercase and preferably the shorthand version for all hexadecimal units although if you wish to use the longhand version then this is fine;
+- use shorthands for properties and property values where it makes sense; where it doesn't make sense is using a shorthand property that makes you declare zero-values, here it is better to be explicit even if it means more lines of CSS;
+- use single quotes for strings, values, etc; The exception to this is for `url()` values;
+- wrap attribute selector values in double quotes;
+- include a space after each comma in comma-separated values;
+- parentheses should not be padded with spaces;
+- when a decimal mark is needed always include the zero;
+- use double colons (`::`) for pseudo elements;
+- use relative units as much as possible (we have Sass mixins to help with this!) - pretty much everything is rem based and outside of font sizing ems may be used for spacing within a component for scaling based on font size, but this should be checked to see what the current approach is as we want consistency with this;
+- use the px unit for fixed-sized things, (although this is rare nowadays as we're building responsive layouts) and for the following CSS properties:
+    - border-radius
+    - border
+    - box-shadow
+    - text-shadow
 
 **Good example**
 
@@ -214,8 +214,8 @@ background-color: transparent;
 
 Our style rules should be written across multiple lines, except in very specific circumstances. There are a number of benefits to this:
 
--A reduced chance of merge conflicts, because each piece of functionality exists on its own line.
--More ‘truthful’ and reliable diffs, because one line only ever carries one change.
+- A reduced chance of merge conflicts, because each piece of functionality exists on its own line.
+- More ‘truthful’ and reliable diffs, because one line only ever carries one change.
 
 Exceptions to this rule are in places where it improves readability, such as similar rulesets that only carry one declaration each, for example:
 
@@ -235,33 +235,33 @@ Exceptions to this rule are in places where it improves readability, such as sim
 
 These types of ruleset benefit from being single-lined because
 
--they still conform to the one-reason-to-change-per-line rule;
--they share enough similarities that they don’t need to be read as thoroughly as other rulesets - there is more benefit in being able to scan their selectors, which are of more interest to us in these cases.
+- they still conform to the one-reason-to-change-per-line rule;
+- they share enough similarities that they don’t need to be read as thoroughly as other rulesets - there is more benefit in being able to scan their selectors, which are of more interest to us in these cases.
 
 
 ### Sass Specifics
 
 Syntax and formatting rules specifically for Sass code
 
--only use the parent selector reference (&) for these use cases
---appending it to pseudo classes;
---appending it to pseudo elements;
---appending it to State hooks in order to chain it to the selector it's referencing;
---referencing itself when combined with any of the above to avoid duplicating CSS properties;
---referencing itself when using BEM element or modifier selectors;
--variable names should include a '-' between multiple words, e.g. '`$primary-color`' **not** '`$primaryColor`';
--only use silent placeholder selectors with the @extend directive, however, we'd rather avoid @extend as much as possible;
--avoid selector nesting, if you have to nest then limit it to one level deep;
--when adding a unit to a number stored in a setting, you have to multiply the number by 1 unit;
--hexadecimal units should not exist outside of global and local partial settings i.e. all colours need to be stored in a setting using a meaningful name;
--always use colour settings for rgb values;
--include parentheses in mixins, even if the mixin is argument-less;
--all Sass functions and mixins should use the [SassDoc](http://sassdoc.com/) documentation guidelines;
--for conditional statements:
---include parentheses;
---always an empty new line before @if;
---@else statements on the same line as previous closing brace (});
---always an empty new line after the last closing brace (}) unless the next line is a closing brace (});
+- only use the parent selector reference (&) for these use cases
+    - appending it to pseudo classes;
+    - appending it to pseudo elements;
+    - appending it to State hooks in order to chain it to the selector it's referencing;
+    - referencing itself when combined with any of the above to avoid duplicating CSS properties;
+    - referencing itself when using BEM element or modifier selectors;
+- variable names should include a '-' between multiple words, e.g. '`$primary-color`' **not** '`$primaryColor`';
+- only use silent placeholder selectors with the @extend directive, however, we'd rather avoid @extend as much as possible;
+- avoid selector nesting, if you have to nest then limit it to one level deep;
+- when adding a unit to a number stored in a setting, you have to multiply the number by 1 unit;
+- hexadecimal units should not exist outside of global and local partial settings i.e. all colours need to be stored in a setting using a meaningful name;
+- always use colour settings for rgb values;
+- include parentheses in mixins, even if the mixin is argument-less;
+- all Sass functions and mixins should use the [SassDoc](http://sassdoc.com/) documentation guidelines;
+- for conditional statements:
+    - include parentheses;
+    - always an empty new line before @if;
+    - @else statements on the same line as previous closing brace (});
+    - always an empty new line after the last closing brace (}) unless the next line is a closing brace (});
 
 **Good example**
 
@@ -367,14 +367,14 @@ TBA...alphabetical, grouped by function?
 
 Because we use Sass we can have more than just declarations between the opening and closing braces ({ }) of a ruleset therefore we want to follow a specific order, which is:
 
--extend calls (@extend);
--mixin calls (@include) with no @content;
--declarations;
--pseudo classes—combining State hooks here is fine;
--pseudo elements;
--BEM elements (Elements, Modifiers);
--mixin calls (@include) with @content—mainly being media queries;
--nested selectors, limit to one level deep or best to avoid in most cases;
+- extend calls (@extend);
+- mixin calls (@include) with no @content;
+- declarations;
+- pseudo classes—combining State hooks here is fine;
+- pseudo elements;
+- BEM elements (Elements, Modifiers);
+- mixin calls (@include) with @content—mainly being media queries;
+- nested selectors, limit to one level deep or best to avoid in most cases;
 
 Each section should ideally be labelled with a `//` comment, e.g. '//Declarations' and allow two lines between the next statement block.
 
@@ -440,9 +440,9 @@ Where possible, limit CSS files' width to a reasonable number. The common theme 
 
 Reasons for this include:
 
--the ability to have multiple files open side by side;
--viewing CSS on sites like GitHub, or in terminal windows;
--providing a comfortable line length for comments.
+- the ability to have multiple files open side by side;
+- viewing CSS on sites like GitHub, or in terminal windows;
+- providing a comfortable line length for comments.
 
 There will be unavoidable exceptions to this rule—such as URLs, or gradient syntax—which shouldn't be worried about.
 
@@ -450,9 +450,9 @@ There will be unavoidable exceptions to this rule—such as URLs, or gradient sy
 
 As well as indentation, we can provide a lot of information through liberal and judicious use of whitespace between rulesets. We use:
 
--One (1) empty line between closely related rulesets.
--Two (2) empty lines between loosely related rulesets.
--Five (5) empty lines between entirely new sections.
+- One (1) empty line between closely related rulesets.
+- Two (2) empty lines between loosely related rulesets.
+- Five (5) empty lines between entirely new sections.
 
 ```
 /*------------------------------------*\
@@ -508,10 +508,10 @@ We want to be using a comment style that is simple and consistent.
 
 Starting right at the top, we want:
 
--to place comments on a new line above their subject;
--to keep line-length to a sensible maximum - again, use your best judgement and maintain consistency;
--to make liberal use of comments to break CSS code into discrete sections;
--to use 'sentence case' comments and consistent text indentation.
+- to place comments on a new line above their subject;
+- to keep line-length to a sensible maximum - again, use your best judgement and maintain consistency;
+- to make liberal use of comments to break CSS code into discrete sections;
+- to use 'sentence case' comments and consistent text indentation.
 
 ### DocBlock-esque
 
@@ -565,10 +565,10 @@ Every partial or module should have its own heading like so:
 
 Breaking this down we have:
 
--uppercase for text;
--a breadcrumb pattern showing where the partial belongs in the CSS architecture, the last part being the same name as the partial filename;
+- uppercase for text;
+- a breadcrumb pattern showing where the partial belongs in the CSS architecture, the last part being the same name as the partial filename;
 - a hash on the module/component in question;
--one (1) empty line to come after the heading;
+- one (1) empty line to come after the heading;
 
 
 ### Partial Intro
@@ -577,10 +577,10 @@ A partial intro type comment follows a Partial Heading type comment, think of th
 
 It should be structured like this:
 
--A description—be as detailed as you can here;
--Any attention grabbing comments prefix with N.B.;
--@credit: if applicable any URL(s) to credit where any ideas came from;
--One (1) empty line between each of the above sections and two (2) empty lines coming after the intro.
+- A description—be as detailed as you can here;
+- Any attention grabbing comments prefix with N.B.;
+- @credit: if applicable any URL(s) to credit where any ideas came from;
+- One (1) empty line between each of the above sections and two (2) empty lines coming after the intro.
 
 **Good example**
 
@@ -642,16 +642,16 @@ We always want to ensure that all of our classes and settings are meaningfully n
 
 Starting right at the top, we use
 
--lowercase;
--BEM-like naming for most classes;
--hyphen-delimited for everything else;
--namespaces for almost everything.
+- lowercase;
+- BEM-like naming for most classes;
+- hyphen-delimited for everything else;
+- namespaces for almost everything.
 
 We don't want (i.e. **DO NOT DO**)
 
--CamelCase;
--underscores (with the exception of being used in BEM Element selectors or very rare hacks in the nameing section below);
--id's, never.
+- CamelCase;
+- underscores (with the exception of being used in BEM Element selectors or very rare hacks in the nameing section below);
+- id's, never.
 
 
 #### BEM-like Naming
@@ -662,9 +662,9 @@ BEM, meaning Block, Element, Modifier, is a front-end methodology coined by deve
 
 BEM splits components’ classes into three groups:
 
--Block: The sole root of the component.
--Element: A component part of the Block.
--Modifier: A variant or extension of the Block.
+- Block: The sole root of the component.
+- Element: A component part of the Block.
+- Modifier: A variant or extension of the Block.
 
 As a quick, non-complete example:
 
@@ -713,11 +713,11 @@ We use nesting within our Sass files for clarity and to highlight Elements' rela
 
 A few DOs and DON'Ts
 
--DO look for patterns in design to reuse elsewhere
--DO look through the documentation
--DON'T use IDs in your CSS
--DON'T change the Object types (namespaced o-)
--DON'T use inline styles
+- DO look for patterns in design to reuse elsewhere
+- DO look through the documentation
+- DON'T use IDs in your CSS
+- DON'T change the Object types (namespaced o-)
+- DON'T use inline styles
 
 ### BEM conventions continued
 
@@ -771,13 +771,13 @@ You can read more about our modularised code base on our [Pattern Library](https
 
 We use hyphen-delimited naming for just about everything:
 
--Settings/variables (`$my-long-variable`)
--Mixins (`my-mixin-name`)
--Functions (`a-function-name`)
--Animation names (`hover-transition`)
--Filenames (`_some-sass-file.scss`)
--State hooks (`.is-hidden`)
--JS hooks (`js-button-click`)
+- Settings/variables (`$my-long-variable`)
+- Mixins (`my-mixin-name`)
+- Functions (`a-function-name`)
+- Animation names (`hover-transition`)
+- Filenames (`_some-sass-file.scss`)
+- State hooks (`.is-hidden`)
+- JS hooks (`js-button-click`)
 
 Whilst brevity is favoured, don't shy away from using a longer name if it is more descriptive, but remember to use hyphenated naming. For example, `.short` is concise but not very descriptive, whereas `.short-intro-text` is preferred. 
 
@@ -841,6 +841,7 @@ $g-color-state-information: #268bd2;
 
 Local settings and variables — e.g. those defined in partials outside of the global settings partial (`_settings.scss`) — should start with their relevant namespace, followed by the name of what it belongs too, for example, a component, a helper, etc., followed by what the setting is targeting. The main goal is to make the settings as readable as possible.
 
+```css
 /**
  * Settings.
  */
@@ -867,6 +868,7 @@ $c-drop-down-menu-padding: 7;
 $c-drop-down-menu-link-padding-sides: 15px;
 
 $c-drop-down-menu-link-padding-ends: 8px;
+```
 
 #### Sizes And Sides
 

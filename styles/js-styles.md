@@ -20,19 +20,19 @@ Filenames’ extension must be .js.
 
 **Good examples**
 
--project_loader.js
--myfilename.js
--a-long-js-filename-here.js
+- project_loader.js
+- myfilename.js
+- a-long-js-filename-here.js
 
 ### File structure
 
 A source file consists of, in order:
 
--License or copyright information, if present or required
--@fileoverview JSDoc, if present
--Required files or modules (e.g. `require('afile')` or `import Module from "./my-module";`), if necessary
--The file’s implementation
--Export of the module (**N.B.** only needed for package manager environments where this is a module to export)
+- License or copyright information, if present or required
+- @fileoverview JSDoc, if present
+- Required files or modules (e.g. `require('afile')` or `import Module from "./my-module";`), if necessary
+- The file’s implementation
+- Export of the module (**N.B.** only needed for package manager environments where this is a module to export)
 
 Exactly one blank line separates each section that is present, except the file's implementation, which should be preceded by 1 or 2 blank lines.
 
@@ -83,9 +83,9 @@ Where possible, each file should be a complete unit of modular functionality, ab
 
 Files should follow good coding standards, particularly:
 
--Be open for extension, but closed for modification
--As [SOLID](https://en.wikipedia.org/wiki/SOLID) as possible
--Efficient, well commented and [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+- Be open for extension, but closed for modification
+- As [SOLID](https://en.wikipedia.org/wiki/SOLID) as possible
+- Efficient, well commented and [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
 Files should be structured in one of the following ways:
 
@@ -137,7 +137,7 @@ MyModule.myPublicFunction('argument1', 'argument2');
 
 These files can be authored in a very similar way depending on their complexity. For example, a simple module doesn't need to be wrapped in a revealing module enclosure. However, a more complex example should be wrapped in the revealing module pattern and exported as a variable at the end of the document.
 
--Export name should be the same as the module variable name in the document
+- Export name should be the same as the module variable name in the document
 
 
 **Good examples**
@@ -206,10 +206,10 @@ for(let i = 0; i < thing.length; i++) {
 
 Braces follow the Kernighan and Ritchie style (["Egyptian brackets"](https://blog.codinghorror.com/new-programming-jargon/)) for nonempty blocks and block-like constructs:
 
--No line break before the opening brace.
--Line break after the opening brace.
--Line break before the closing brace.
--Line break after the closing brace if that brace terminates a statement or the body of a function or class statement, or a class method. Specifically, there is no line break after the brace if it is followed by else, catch, while, or a comma, semicolon, or right-parenthesis.
+- No line break before the opening brace.
+- Line break after the opening brace.
+- Line break before the closing brace.
+- Line break after the closing brace if that brace terminates a statement or the body of a function or class statement, or a class method. Specifically, there is no line break after the brace if it is followed by else, catch, while, or a comma, semicolon, or right-parenthesis.
 
 ```javascript
 method(foo) {
@@ -320,9 +320,9 @@ Everything outside of a block opening or closing line is generally regarded as a
 
 These are the basic rules for statements:
 
--One statement per line; Each statement is followed by a line-break.
--Semicolons are required - Every statement must be terminated with a semicolon. Relying on automatic semicolon insertion is forbidden.
--JavaScript is not limited per line, but readbility should be preferred at all times. A generally agreed upon standard is limiting lines to 80 characters, but using best judgement is allowed. It is accepted that some lines (those containing URL's for example) will not be able to be gracefully split.
+- One statement per line; Each statement is followed by a line-break.
+- Semicolons are required - Every statement must be terminated with a semicolon. Relying on automatic semicolon insertion is forbidden.
+- JavaScript is not limited per line, but readbility should be preferred at all times. A generally agreed upon standard is limiting lines to 80 characters, but using best judgement is allowed. It is accepted that some lines (those containing URL's for example) will not be able to be gracefully split.
 
 ### Whitespace
 
