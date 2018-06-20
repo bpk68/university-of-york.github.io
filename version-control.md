@@ -106,6 +106,40 @@ Here are some examples:
 - [Hotfix] > fix/administrate-browser-issue
 - [Hotfix] > fix/carousel-display-bug
 
+## Commit naming conventions and messages
+
+Our automated versioning system, [Semantic Release](https://github.com/semantic-release/semantic-release), collects information and correctly increments version numbers based on git commit titles and messages. 
+
+It's important to adhere to the commit message conventions in order for the release versioning to a) work and b) be correctly applied. 
+
+These are the naming conventions that should be used to affect versioning:
+
+- For **patch** versions
+	- fix: [title]
+- For **minor** versions
+	- feature: [title]
+	- update: [title]
+	- performance: [title]
+- For **major** versions
+	- BREAKING CHANGE: [description]
+
+**Examples**
+
+For a patch version, your commit message could be:
+
+```
+title > fix: corrected some missing css 
+Message > updated the styles.css file to correct a missing 'display' property
+```
+
+For a minor version, it's this:
+
+```
+title > feature: autocomplete js work
+message > added function to autocomplete a map search using js library
+```
+
+
 ## A word on experimental work
 
 Any good development team knows that experimentation and tangential coding can produce new ideas and help improve the overall code base. However, this code usually lives outside of normal work, such as sprints or other planned features and could potentially introduce more errors or issues.
