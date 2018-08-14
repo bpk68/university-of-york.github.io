@@ -34,7 +34,7 @@ It would contain commits such as v1.5.6, v2.0, v2.3.1, etc., both major and mino
 
 <div class="c-alert c-alert--warning" role="alert">
   <div class="c-alert__content">
-    <strong>Important!</strong> With the exception of hotfixes, **nothing other than release branches are merged into Master.**
+    <strong>Important!</strong> With the exception of hotfixes, <strong>nothing other than release branches are merged into Master.</strong>
   </div>
 </div>
 

@@ -24,7 +24,7 @@ Semaphore CI is a simple, but powerful platform that automates the process of bu
 
 <div class="c-alert c-alert--info" role="alert">
   <div class="c-alert__content">
-    <strong>Note:</strong> for most of our repositories, new branches are automatically picked up and built within Semaphore, although it is _only_ the `dev` and `master` branches that are associated with deployment profiles. 
+    <strong>Note:</strong> for most of our repositories, new branches are automatically picked up and built within Semaphore, although it is _only_ the <code>dev</code> and <code>master</code> branches that are associated with deployment profiles. 
   </div>
 </div>
 
@@ -58,7 +58,7 @@ Once the project is set up, you'll need to add some project settings by clicking
 
 <div class="c-alert c-alert--info" role="alert">
   <div class="c-alert__content">
-    <strong>Note:</strong> although we add the `yarn release` command here (because you can't set per-branch settings) this only actually does anything on the `master` branch because of the settings within the special `releaserc.json` file in the project
+    <strong>Note:</strong> although we add the <code>yarn release</code> command here (because you can't set per-branch settings) this only actually does anything on the `master` branch because of the settings within the special <code>releaserc.json</code> file in the project
   </div>
 </div>
  
@@ -87,7 +87,7 @@ Generally, we have two deployment servers, a prevew for QA and testing purposes,
 
 <div class="c-alert c-alert--warning" role="alert">
   <div class="c-alert__content">
-    <strong>Important!</strong> only the `dev` branch of a repository is deployed automatically and usually lives at the https://www.york.ac.uk/preview/[folder] url where '[folder]' is specific to the particular project in question. For example, the campus map deploys to '/preview/map'.
+    <strong>Important!</strong> only the <code>dev</code> branch of a repository is deployed automatically and usually lives at the <code>https://www.york.ac.uk/preview/[folder]</code> url where <code>[folder]</code> is specific to the particular project in question. For example, the campus map deploys to <code>/preview/map</code>.
   </div>
 </div>
 
@@ -110,7 +110,7 @@ You can edit the server settings whenever you wish by clicking on the server nam
 
 <div class="c-alert c-alert--info" role="alert">
   <div class="c-alert__content">
-    <strong>Note:</strong> if you're looking to add in release versioning to this, you'll need an additional step, `yarn release` just after the build one. Also, to integrate the project with [Rollbar error reporting](https://university-of-york.github.io/guides/error-reporting/), you'll need to add a final deployment notification step by adding the following line, `curl -i -X POST -H 'Content-Type: application/json' -d '{"access_token": "[GENERATE THIS FROM ROLLBAR]]", "environment": "production", "revision": "${REVISION}", "local_username": "${DEPLOY_AUTHOR_NAME}"}' https://api.rollbar.com/api/1/deploy/;`
+    <strong>Note:</strong> if you're looking to add in release versioning to this, you'll need an additional step, <code>yarn release</code> just after the build one. Also, to integrate the project with <a href="https://university-of-york.github.io/guides/error-reporting/">Rollbar error reporting</a>, you'll need to add a final deployment notification step by adding the following line, <code>curl -i -X POST -H 'Content-Type: application/json' -d '{"access_token": "[GENERATE THIS FROM ROLLBAR]]", "environment": "production", "revision": "${REVISION}", "local_username": "${DEPLOY_AUTHOR_NAME}"}' https://api.rollbar.com/api/1/deploy/;</code>
   </div>
 </div>
 

@@ -52,7 +52,7 @@ Firstly, the release lead should notify key stakeholders of the upcoming release
 
 <div class="c-alert c-alert--info" role="alert">
   <div class="c-alert__content">
-    <strong>Note:</strong> as code is being checked in, it should be subject to the [code review process](https://university-of-york.github.io/code-reviews/) by both peers and automation. It _should not_ be merged back into the `dev` branch unless it has passed code review!
+    <strong>Note:</strong> as code is being checked in, it should be subject to the <a href="https://university-of-york.github.io/code-reviews/">code review process</a> by both peers and automation. It _should not_ be merged back into the `dev` branch unless it has passed code review!<code>
   </div>
 </div>
 
@@ -65,7 +65,7 @@ For example, if the due release is a minor release, then the branch you create w
 
 <div class="c-alert c-alert--info" role="alert">
   <div class="c-alert__content">
-    <strong>Note:</strong> that the final release version will be determined and published by our automated release numbering system [Semantic Release](https://github.com/semantic-release/semantic-release).
+    <strong>Note:</strong> that the final release version will be determined and published by our automated release numbering system <a href="https://github.com/semantic-release/semantic-release">Semantic Release</a>.
   </div>
 </div>
 

@@ -23,7 +23,7 @@ Thankfully, it's quite simple to get Rollbar integrated within an app. Here are 
 
 <div class="c-alert c-alert--info" role="alert">
   <div class="c-alert__content">
-    <strong>Note:</strong> there is a deployment notifications part of the process, but this is covered in more detail in our [build and deployment](https://university-of-york.github.io/guides/build-deployment/) section
+    <strong>Note:</strong> there is a deployment notifications part of the process, but this is covered in more detail in our <a href="https://university-of-york.github.io/guides/build-deployment/">build and deployment</a> section
   </div>
 </div>
 
