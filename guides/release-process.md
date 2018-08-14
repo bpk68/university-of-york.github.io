@@ -50,7 +50,12 @@ Firstly, the release lead should notify key stakeholders of the upcoming release
 - Development work is committed and checked into the `dev` branch of the project
 - The wider digital team are satisfied that the code can be released - i.e. it passes quality assurance (QA) and testing
 
-**Note** as code is being checked in, it should be subject to the [code review process](https://university-of-york.github.io/code-reviews/) by both peers and automation. It _should not_ be merged back into the `dev` branch unless it has passed code review!
+<div class="c-alert c-alert--info" role="alert">
+  <div class="c-alert__content">
+    <strong>Note:</strong> as code is being checked in, it should be subject to the [code review process](https://university-of-york.github.io/code-reviews/) by both peers and automation. It _should not_ be merged back into the `dev` branch unless it has passed code review!
+  </div>
+</div>
+
 
 ### Create a release branch
 
@@ -58,7 +63,12 @@ Create a new branch off the `dev` branch, following our naming conventions with 
 
 For example, if the due release is a minor release, then the branch you create will be `release/v1.5.7`. Or you could create a release name from a collective body of work title, such as `release/summer-map-updates` or even a sprint, such as `release/sprint-5`
 
-**Note** that the final release version will be determined and published by our automated release numbering system [Semantic Release](https://github.com/semantic-release/semantic-release).
+<div class="c-alert c-alert--info" role="alert">
+  <div class="c-alert__content">
+    <strong>Note:</strong> that the final release version will be determined and published by our automated release numbering system [Semantic Release](https://github.com/semantic-release/semantic-release).
+  </div>
+</div>
+
 
 ### Trigger deployment
 
@@ -87,4 +97,8 @@ Following the Pull Request merge into the `master` branch, this body of code now
 
 Once a release is finished with and the branch has been merged back, the `release` branch should be deleted.
 
-**Note** that this can occur once a successful merge has taken place following a release Pull Request.
+<div class="c-alert c-alert--info" role="alert">
+  <div class="c-alert__content">
+    <strong>Note:</strong> that this can occur once a successful merge has taken place following a release Pull Request.
+  </div>
+</div>

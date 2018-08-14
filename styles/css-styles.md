@@ -25,7 +25,12 @@ Starting right at the top, we want
 - multi-line CSS;
 - meaningful use of whitespace.
 
-**Note** some of our build and linting tools should catch and enforce most of these syntax and formatting rules.
+<div class="c-alert c-alert--info" role="alert">
+  <div class="c-alert__content">
+    <strong>Note:</strong> some of our build and linting tools should catch and enforce most of these syntax and formatting rules.
+  </div>
+</div>
+
 
 ### Multiple files and modular structure
 
@@ -57,7 +62,7 @@ Where possible, try to keep style files as small and modular as needed to aid wi
 
 A good table of contents will explain how styles pin together and what each does, how it relates to another. Although it requires some commitment from the team to maintain and keep up to date, it's worth it.
 
-```
+```css
 /*------------------------------------*\
     #MAIN
 \*------------------------------------*/
@@ -114,7 +119,7 @@ The '#' allows us to find this much easier when searching files.
 
 Here is how our rulesets should look:
 
-```
+```css
 [selector] {
     [property]: [value];
     [property]: [value];
@@ -170,7 +175,7 @@ Adding to the above, we also want to pay attention to
 
 **Good example**
 
-```css
+```sass
 .my-selector {
     background-image: url(/path/to/image.png);
     color: #eee;
@@ -197,7 +202,7 @@ To expand on this rule: use shorthands for properties and property values where 
 
 A good example of this is using the shorthand background-color property instead of the longhand background property when you only need to declare a colour. Using the shorthand background-color property means we now don't have to worry about potentially having to override all of the properties that come bundled with the longhand background property, which are:
 
-```
+```css
 background-image: initial;
 background-position-x: initial;
 background-position-y: initial;
@@ -219,7 +224,7 @@ Our style rules should be written across multiple lines, except in very specific
 
 Exceptions to this rule are in places where it improves readability, such as similar rulesets that only carry one declaration each, for example:
 
-```
+```css
 .icon {
   display: inline-block;
   width:  16px;
@@ -376,7 +381,7 @@ Because we use Sass we can have more than just declarations between the opening 
 - mixin calls (@include) with @content—mainly being media queries;
 - nested selectors, limit to one level deep or best to avoid in most cases;
 
-Each section should ideally be labelled with a `//` comment, e.g. '//Declarations' and allow two lines between the next statement block.
+Each section should ideally be labelled with a `//` comment, e.g. `//Declarations` and allow two lines between the next statement block.
 
 **Good example**
 

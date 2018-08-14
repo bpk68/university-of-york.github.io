@@ -1,0 +1,40 @@
+/*
+ * Designed, built, and released under MIT license by @uniofyork. 
+ */
+
+
+/*
+ * Contents
+ *
+ * Alerts 
+ *
+ */
+
+
+
+ /*
+ * Alerts
+ *
+ * 
+ */
+
+.c-alert {
+    margin: 0 0 20px;
+    border-left: .8em solid #333;
+        border-left-color: rgb(51, 51, 51);
+    background-color: #ececec;
+    border-radius: 4px;
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.c-alert--info {
+    border-color: #00b3eb;
+    background-color: #d2f4ff;
+}
+
+.c-alert--warning {
+    border-color: #e4b53c;
+    background-color: #faf1d9;
+}

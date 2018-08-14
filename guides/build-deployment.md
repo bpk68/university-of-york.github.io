@@ -22,7 +22,11 @@ Semaphore CI is a simple, but powerful platform that automates the process of bu
 	- Internal Slack channel 'digital_deployments' is updated with build status
 	- (On success) for the `dev` branch, an automatic deployment to the preview location is triggered
 
-**Note** for most of our repositories, new branches are automatically picked up and built within Semaphore, although it is _only_ the `dev` and `master` branches that are associated with deployment profiles. 
+<div class="c-alert c-alert--info" role="alert">
+  <div class="c-alert__content">
+    <strong>Note:</strong> for most of our repositories, new branches are automatically picked up and built within Semaphore, although it is _only_ the `dev` and `master` branches that are associated with deployment profiles. 
+  </div>
+</div>
 
 ### Skipping a build
 
@@ -50,10 +54,17 @@ Once the project is set up, you'll need to add some project settings by clicking
 	- Node.js version > at least `node.js 8.11.1`
 	- Setup > `yarn install`
 	- Job #1 > `yarn build`
-	- Job #1 > `yarn release` - **note** although we at this command here (because you can't set per-branch settings) this only actually does anything on the `master` branch because of the settings within a special file in the project
+	- Job #1 > `yarn release` 
+
+<div class="c-alert c-alert--info" role="alert">
+  <div class="c-alert__content">
+    <strong>Note:</strong> although we add the `yarn release` command here (because you can't set per-branch settings) this only actually does anything on the `master` branch because of the settings within the special `releaserc.json` file in the project
+  </div>
+</div>
+ 
 2. Environment Variables
-	- Environment Variables from Secrets - make sure the `shared_ftp_details` secret file is loaded here as you'll need it for preview deployment via sftp (explained in next section). You can click 'manage secrets' to do this, or ask the owner/admin to add it to this project
-	- Project specific Environment Variables - this is where you can set this repositories live deployment variables or project specific variables, such as ftp username and password.
+	- **Environment Variables** from Secrets - make sure the `shared_ftp_details` secret file is loaded here as you'll need it for preview deployment via sftp (explained in next section). You can click 'manage secrets' to do this, or ask the owner/admin to add it to this project
+	- **Project specific Environment Variables** - this is where you can set this repositories live deployment variables or project specific variables, such as ftp username and password.
 3. Branches
 	- Default branch > `master`
 	- Cancellation strategy > Cancel queued builds except for the default branch
@@ -74,7 +85,11 @@ After a successful build you'll want to make sure that the code is available for
 
 Generally, we have two deployment servers, a prevew for QA and testing purposes, and a live one that published final, tested, approved code. 
 
-**Note** only the `dev` branch of a repository is deployed automatically and usually lives at the https://www.york.ac.uk/preview/[folder] url where '[folder]' is specific to the particular project in question. For example, the campus map deploys to '/preview/map'. 
+<div class="c-alert c-alert--warning" role="alert">
+  <div class="c-alert__content">
+    <strong>Important!</strong> only the `dev` branch of a repository is deployed automatically and usually lives at the https://www.york.ac.uk/preview/[folder] url where '[folder]' is specific to the particular project in question. For example, the campus map deploys to '/preview/map'.
+  </div>
+</div>
 
 The trunk branch, `master` is usually set up to be deployed, but it is left to be triggered manually. This avoids hasty or erroneous deployments. 
 
@@ -92,6 +107,12 @@ It's surprisingly straight forward to set up a deployment server via FTP using S
 6. Give the server a meaningful name, something like 'Preview (project name)'.
 
 You can edit the server settings whenever you wish by clicking on the server name from the dashboard and choosing 'Edit server' from the button that appears.
+
+<div class="c-alert c-alert--info" role="alert">
+  <div class="c-alert__content">
+    <strong>Note:</strong> if you're looking to add in release versioning to this, you'll need an additional step, `yarn release` just after the build one. Also, to integrate the project with [Rollbar error reporting](https://university-of-york.github.io/guides/error-reporting/), you'll need to add a final deployment notification step by adding the following line, `curl -i -X POST -H 'Content-Type: application/json' -d '{"access_token": "[GENERATE THIS FROM ROLLBAR]]", "environment": "production", "revision": "${REVISION}", "local_username": "${DEPLOY_AUTHOR_NAME}"}' https://api.rollbar.com/api/1/deploy/;`
+  </div>
+</div>
 
 
 ## Automatic release and versioning

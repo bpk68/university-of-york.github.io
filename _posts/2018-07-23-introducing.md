@@ -16,10 +16,10 @@ Sticking with the open source approach, these development docs are a great place
 
 They help us in a number of ways:
 
--Allowing the wider world to see how we approach development internally and what standards we aim for
--Documenting progress within the development team
--Starting and growing conversations around best practices in development
--Onboarding new team members who can quickly discover how we work and adhere to our code guidelines and standards
+- Allowing the wider world to see how we approach development internally and what standards we aim for
+- Documenting progress within the development team
+- Starting and growing conversations around best practices in development
+- Onboarding new team members who can quickly discover how we work and adhere to our code guidelines and standards
 
 You can find out more about the work we do on our [GitHub organisation pages](https://github.com/university-of-york/) and how our work is implemented at the [University of York](https://www.york.ac.uk) website.
 

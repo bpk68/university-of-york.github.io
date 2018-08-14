@@ -32,7 +32,12 @@ The master branch is the main, historical record-keeping trunk for our code base
 
 It would contain commits such as v1.5.6, v2.0, v2.3.1, etc., both major and minor releases.
 
-With the exception of hotfixes, **nothing other than release branches are merged into Master.**
+<div class="c-alert c-alert--warning" role="alert">
+  <div class="c-alert__content">
+    <strong>Important!</strong> With the exception of hotfixes, **nothing other than release branches are merged into Master.**
+  </div>
+</div>
+
 
 ### Development branch
 
@@ -42,8 +47,8 @@ It is branched off into features for larger bodies of work or as sprint tasks or
 
 The vast majority of development work is carried out against the Development branch. The only exceptions to this are:
 
--Minor tweaks done in a Release branch when a release is imminent (see below section on releases)
--Hotfixes needed on the Master branch (see below section on hotfixes)
+- Minor tweaks done in a Release branch when a release is imminent (see below section on releases)
+- Hotfixes needed on the Master branch (see below section on hotfixes)
 
 ### Feature branches
 
@@ -65,17 +70,17 @@ When a release is due (either there is sufficient work done, features created an
 
 This signals the start of the next release cycle. Once a release cycle has started, it changes the development process a little in the following ways:
 
-1.**No new features can be added** to the Release branch
-2.**Only minor tweaks, bug fixes and documentation items** should be carried out in and committed to the Release branch
+1. **No new features can be added** to the Release branch
+2. **Only minor tweaks, bug fixes and documentation items** should be carried out in and committed to the Release branch
 
 #### The release process
 
 Once the code is ready to release, the following things should happen:
 
-1.The release is carried out, the code pushed to the live base
-2.The Release branch is **merged back into the Master branch** and **tagged with a version number**
-3.The Release branch is **merged back into the Development branch**
-4.The **Release branch is now deleted.**
+1. The release is carried out, the code pushed to the live base
+2. The Release branch is **merged back into the Master branch** and **tagged with a version number**
+3. The Release branch is **merged back into the Development branch**
+4. The **Release branch is now deleted.**
 
 ### Hotfix branch
 
@@ -83,10 +88,10 @@ Otherwise known as ‘maintenance’ branches, Hotfix branches are much like the
 
 For interim, serious or emergency fixes, a Hotfix branch should be created. Once the fix is complete, the following actions should happen:
 
-1.The Hotfix branch should be **merged into the Master branch**
-2.The Master branch should be **tagged with an updated version number**
-3.The Hotfix branch should be merged into the Development branch _or_ the current Release branch, depending on how close to a release the team are
-4.The **Hotfix branch should be deleted** 
+1. The Hotfix branch should be **merged into the Master branch**
+2. The Master branch should be **tagged with an updated version number**
+3. The Hotfix branch should be merged into the Development branch _or_ the current Release branch, depending on how close to a release the team are
+4. The **Hotfix branch should be deleted** 
 
 ## Branch naming conventions
 
@@ -128,15 +133,15 @@ These are the naming conventions that should be used to affect versioning:
 For a patch version, your commit message could be:
 
 ```
-title > fix: corrected some missing css 
-Message > updated the styles.css file to correct a missing 'display' property
+title > fix: correct some missing css 
+Message > update the styles.css file to correct a missing 'display' property
 ```
 
 For a minor version, it's this:
 
 ```
 title > feature: autocomplete js work
-message > added function to autocomplete a map search using js library
+message > add function to autocomplete a map search using js library
 ```
 
 
