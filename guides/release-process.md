@@ -52,7 +52,7 @@ Firstly, the release lead should notify key stakeholders of the upcoming release
 
 <div class="c-alert c-alert--info" role="alert">
   <div class="c-alert__content">
-    <strong>Note:</strong> as code is being checked in, it should be subject to the <a href="https://university-of-york.github.io/code-reviews/">code review process</a> by both peers and automation. It _should not_ be merged back into the `dev` branch unless it has passed code review!<code>
+    <strong>Note:</strong> as code is being checked in, it should be subject to the <a href="https://university-of-york.github.io/code-reviews/">code review process</a> by both peers and automation. It _should not_ be merged back into the `dev` branch unless it has passed code review!
   </div>
 </div>
 
