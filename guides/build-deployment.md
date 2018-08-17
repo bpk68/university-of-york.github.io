@@ -110,7 +110,13 @@ You can edit the server settings whenever you wish by clicking on the server nam
 
 <div class="c-alert c-alert--info" role="alert">
   <div class="c-alert__content">
-    <strong>Note:</strong> if you're looking to add in release versioning to this, you'll need an additional step, <code>yarn release</code> just after the build one. Also, to integrate the project with <a href="https://university-of-york.github.io/guides/error-reporting/">Rollbar error reporting</a>, you'll need to add a final deployment notification step by adding the following line, <code>curl -i -X POST -H 'Content-Type: application/json' -d '{"access_token": "[GENERATE THIS FROM ROLLBAR]]", "environment": "production", "revision": "${REVISION}", "local_username": "${DEPLOY_AUTHOR_NAME}"}' https://api.rollbar.com/api/1/deploy/;</code>
+    <strong>Note:</strong> if you're looking to add in release versioning to this, you'll need an additional step, <code>yarn release</code> just after the build one.
+  </div>
+</div>
+
+<div class="c-alert c-alert--info" role="alert">
+  <div class="c-alert__content">
+    <strong>Note:</strong> to integrate the project with <a href="https://university-of-york.github.io/guides/error-reporting/">Rollbar error reporting</a>, you'll need to add a final deployment notification step by adding the following line, <code>curl -i -X POST -H 'Content-Type: application/json' -d '{"access_token": "'"$ROLLBAR_DEPLOY_TOKEN"'", "environment": "production", "revision": "'"$REVISION"'", "local_username": "'"$DEPLOY_AUTHOR_NAME"'"}' https://api.rollbar.com/api/1/deploy/;</code>. You'll have to generate the <code>$ROLLBAR_DEPLOY_TOKEN</code> within Rollbar and then add it to the build server as an environment variable.
   </div>
 </div>
 

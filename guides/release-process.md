@@ -16,6 +16,10 @@ At some point, development work pauses and shifts towards releasing the latest, 
 
 You can read more about how we automate versioning and release tagging in our [automated versioning](https://university-of-york.github.io/guides/automated-versioning/) documentation.
 
+### Skipping a release
+
+If you'd like your commit, or a series of commits that you're pushing, to **not** be involved in the release versioning (i.e. the automatic version numbering will _ignore_ this commit), just write `[release skip]` or `[skip release]` somewhere in your commit's message.
+
 
 ## The release process
 

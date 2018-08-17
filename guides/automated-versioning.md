@@ -15,6 +15,10 @@ Our automated versioning and release system [Semantic Release](https://github.co
 
 Versions are based on the [Semver](https://semver.org/) approach to semantic versioning, employing major, minor and patch release versions as appropriate.
 
+### Skipping a release
+
+If you'd like your commit, or a series of commits that you're pushing, to **not** be involved in the release versioning (i.e. the automatic version numbering will _ignore_ this commit), just write `[release skip]` or `[skip release]` somewhere in your commit's message.
+
 ### Versioning through commit message conventions 
 
 Semantic Release does this via conventions found in git commit messages. You can read the full details on the [version control](https://university-of-york.github.io/version-control/) page, but the general gist is:
